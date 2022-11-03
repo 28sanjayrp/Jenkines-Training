@@ -1,0 +1,14 @@
+    link - https://pkg.jenkins.io/redhat-stable/
+    
+     sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+     sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+     
+     yum install fontconfig java-11-openjdk    #You need to be root to perform this command.
+     yum install jenkins
+     sudo amazon-linux-extras install java-openjdk11
+     java --version
+     jenkins --version
+     service jenkins status      #to chech jenkins server active or not
+     service jenkins restart      #if jenkins server is inactive(dead) restart it.
+     service jenkins status
+     cat /var/lib/jenkins/secrets/initialAdminPassword    # from jenkins ui window
