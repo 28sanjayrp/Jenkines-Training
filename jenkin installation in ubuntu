@@ -1,23 +1,27 @@
 https://www.jenkins.io/doc/book/installing/
 https://www.jenkins.io/doc/book/pipeline/
 
-sudo su -
-apt update
 
-apt install openjdk-11-jre -y
-java -version
+Follow the below steps or commands to install the jankins in ubuntu instance:
+#this is comment
 
-wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+sudo su -      #to be a root or super user
+apt update        #update all package before install
+
+apt install openjdk-11-jre -y         # installing java to run jankins
+java -version                         # to check the java version or installed or not
+
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -       
 
 sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 
 sudo apt install ca-certificates
 
 apt update
-apt install jenkins
-systemctl status jenkins
-systemctl start jenkins
+apt install jenkins       #to install the jankins 
+systemctl status jenkins    #to check the jankins status
+systemctl start jenkins      #if jankins nor started, to start it
 
 
-To know which port, application is listening to in your linux server
+#To know which port, application is listening to in your linux server
 lsof -i -P -n | grep LISTEN
