@@ -11,17 +11,27 @@ apt update        #update all package before install
 apt install openjdk-11-jre -y         # installing java to run jankins
 java -version                         # to check the java version or installed or not
 
+#Downloading and installing the Jenkins app
+
 wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -       
-
 sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
-
 sudo apt install ca-certificates
 
 apt update
 apt install jenkins       #to install the jankins 
 systemctl status jenkins    #to check the jankins status
+sudo service jenkins status   #to check the status of the installation. Once you verify the status as active, you can press Ctrl+z to exit from the process.
 systemctl start jenkins      #if jankins nor started, to start it
-
+systemctl status jenkins     # varify the status
 
 #To know which port, application is listening to in your linux server
 lsof -i -P -n | grep LISTEN
+
+
+#Open localhost/publicIP:8080 in the browser, and you will need to enter the initial password. 
+
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword       #Copy this password and paste it on your Jenkins page in the browser.
+
+#click on continue and , click on Install the suggested plugins. 
+#You can either create an admin user or skip and continue as admin. Select Skip and continue as admin.
+#2.13	In the Instance configuration page, click on the Start using Jenkins button. Now your jankins is ready to work
