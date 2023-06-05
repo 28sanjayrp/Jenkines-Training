@@ -1,0 +1,16 @@
+********************Integrate Git with Jenkins**************************
+
+prerequisites: you need to have Jenkins installed in order to integrate Git with it.
+
+
+step 1: Open the browser and run your Jenkins by typing localhost/publicip:8080, provide the required credentials and sign in. and go to the jenkins dashboard
+
+>click on "Manage Jenkins", there you will get a list of options to configure your Jenkins. like configuring system, global tool configuration, Manage plugins, manage nodes and clouds.
+from that list select "Manage Plugins" to install the plugins.
+* some times the git plugin is installed by default, you can check it under the installed tab by searching "Git Plugin" if it is installed it shows here.
+*if it is not installed by default, then go to the Available tab, search "Git Plugin" and click on "install without reset" and the plugin will be installed.
+
+note: you can verify the installed plugins in the installed tab by searching their name.
+
+Note: similarly we can install other plugins also like, Maven, pipeline, docker, build ...so on as per requirement
+
