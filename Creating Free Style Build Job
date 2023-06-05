@@ -1,0 +1,52 @@
+***************************Creating a Freestyle Build Job******************************
+
+
+Tools: Git , Git Hub, and Jenkins
+
+Steps to be followed:
+1.	Create a GitHub repository 
+2.	Add a Java program to the repository
+3.	Create a freestyle build job in Jenkins
+4.	Build the Java program with Jenkins
+
+Step 1 : Create a GitHub repo
+> open the git hub on browser, and sign in to your account.
+> click on "+" icon and select "New Repository".
+> provider the repository name, select the checkbox of Add a README file , select file type as public and click on create repository.
+> click on code, then click on HTTPS and click on copy icon to copy the url.
+
+Step 2 : Add a Java program to the repository
+>open the terminal, Run "$mkdir HelloWorld" to create a new directory.
+> Run "$git init" to initialize the git in the directory to track the files
+> navigate to the HelloWorld directory - $cd HelloWorld
+> create a one jave file = $touch HelloWorld.java, and vi the file to open it in text editor - $vi hello-world.java
+> write jave code as shown below to print the "Hello World" 
+>>>>public class Helloworld{
+      public static viod main(String[] args){
+              System.out.println("Hello, World!");
+      }
+    }  
+
+Note: file name and class name should be same in jave(HelloWorld)
+>save the file and exit from the text editor -> press (esc) and type (:wq)
+
+> Run "$git add . or $git add HelloWorld.java" to add the file to staging area
+> Run "$git commit Helloworld.java -m "New File Added" to commit the changes to the local repo.
+
+> Run "$git remote add origin <copied url from github>"  to establish the connection between local repo and github.
+> Run "$git push -u origin master" to push the local changes to the remote(github) directory.
+
+
+step 3 : Create a freestyle build job in Jenkins
+> Go to your jenkin's dashboard, click on "New Item" enter a name for your project or job or task in the "Enter an item name field" 
+example- "Freestyle project demo"
+> select "Freestyle Project" as the build job type, click on ok.
+*>> Go to the "Source code management section" and select 'Git'(redio btn)
+*>> paste the copied url from github after pushing the .java file
+> click on save.
+
+step 4 : Build the Java program with Jenkins
+> click on the created jenkins project name in the jenkins dashboard.
+> click on "Build Now" in the project window, jenkins will now build your project.
+> click on "Build History" to view the build result.
+> click on the "console output" to view the build logs.
