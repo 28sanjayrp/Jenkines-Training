@@ -1,0 +1,67 @@
+**************************Integrate Maven with Jenkins***********************
+
+Objectives: Install Maven plugin  and integrate it with jenkins.
+
+required tools: Git, GitHub, amd Jenkins
+Note: please ensure that jenkin is running.
+
+Steps to be followed:
+1.	Installing Maven plugin
+2.	Setting the Global Tool Configuration
+3.	Forking a sample repository
+4.	Integrating Maven with Jenkins
+
+
+Step 1 : Installing maven plugin:
+>Go to the Jenkin's dashboard in your browser(localhost:8080 or publicIP:8080)
+>In the Jenkins dashboard click on 'manage jenkins', You will get four options in that select "Manage Plugins".
+>Under the 'Available' tab, search for "Maven plugin".
+>Select the checkbox in front of the "Maven Integration" plugin, and click on the "Install without restart button".
+>The Maven plugin will get installed.
+
+>install maven in your instance or server.
+>Run $mvn -version to check whether it is installed or not.
+>if it is installed it shows it's configuration which will help us to setting up the global tool configuration.
+>if it is not installed then Run $sudo apt install maven or mvn -y to install it.
+>then Run $mvn -version to validate.
+
+step 2 : Setting the Global Tool Configuration
+>2.1	Go to Jenkins Dashboard, click on "Manage Jenkins". From the list of options, 
+choose "Global Tool Configuration".
+>Click on "add JDK", and provide the "Name"(ex- My_jdk) and "JAVA_HOME"(/usr/lib/jvm/java-11-openjdk-amd64) path. uncheck "Install automatically" checkbox.
+Note:to install jankins we have already installed JDK, you can check by running command $java --version.
+
+>To configure Maven, click on "Add Maven" button in the Maven section, enter any "Name"(ex- My_Mvn) and "Maven_Home"(/usr/share/maven) path. 
+and uncheck the "install automatically" checkbox.
+
+
+> similarly to configure Git, click on "Add Git", and enter any "Name"(ex-My_git) and "Path to Git executable"(/bin/git) path.
+>click on save.
+
+
+Step 3 : Forking a sample repository.
+>login to github account.
+>Navigate to "https://github.com/jenkins-docs/simple-java-maven-app", and click on Fork.
+>Open the terminal. Run $git clone [Forked_REPO URL] to clone the repo locally.
+
+
+Step 4 :Integrating Maven with Jenkins:
+>Click on "New Item" in the Jenkins dashboard.
+>Enter a name for your project. Select "Maven project" as the build job type.
+>Click on OK. Scroll down to the "Source Code Management" section, and select "Git", and Enter the repository URL.
+>In the "Build Triggers" section, select the required option. for example - Github hook trigger
+>Click on Save.
+>Click on the Build History to view the build results. Click on the Console Output to view the build logs.
+
+
+
+
+
+
+
+
+
+
+
+
+>
