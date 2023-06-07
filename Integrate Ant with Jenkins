@@ -1,0 +1,62 @@
+************************************Integrate Ant with Jenkins*********************************************
+
+Objective: Install Ant plugin and integrate it with Jenkins
+
+Tools required: Git, GitHub, and Jenkins
+Note:Please ensure you have jenkins installed in order to proceed.
+
+Steps to be followed:
+1.	Create a GitHub repository 
+2.	Add build.xml file to the repository
+3.	Set the Global Tool Configuration
+4.	Integrate Ant with Jenkins
+
+Step 1:  Create a GitHub repository 
+>Open github and login to your account, create a new repository,ADD a README file too. example-Ant Demo
+>Click on Code. Click on HTTPS. Copy the repository URL.
+
+Step 2:  Add build.xml file to the repository
+>Open the terminal, Run "mkdir helloworld" to create a directory.
+>Navigate to the "hello-world" directory. Run "cd helloworld" command.
+>Run "vi build.xml" to open the java file in a text editor.
+>Paste the code below into the file:
+
+<?xml version="1.0"?>
+<project name="Hello World Project" default="info">
+<target name="info">
+<echo> Hello World - Welcome to Simplilearn</echo>
+</target>
+</project>
+
+>Save the file and exit the text editor.
+>Run the "git init" command. Run "git add ." command . Run "git commit -m “Add new files” command.
+>Run "git remote add origin <Repository_URL>" command. Run "git push -u origin master" command.
+
+
+Step 3: Set the Global Tool Configuration:
+>Open the browser and go to "Jenkins dashboard" by typing "localhost/publicIP:8080" in your browser.
+>Provide the credentials and click on Sign in.
+>Go to Jenkins Dashboard, click on "Manage Jenkins". From the list of options, choose "Global Tool Configuration".
+>Click on "Add Ant", provide the "Name"(My_Ant), and select the version(1.10.10) you want to install. And check the "Install automatically checkbox".
+>Click on Save.
+
+
+Step 4:  Integrate Ant with Jenkins:
+>Click on "New Item" in the Jenkins dashboard to create project.
+>Enter a name for your project, Select the "Freestyle project" as the build job type. Click on OK. 
+>Scroll down to the "Source Code Management" section and select "Git". Enter the git repository URL.
+>Scroll down to "Build section", click on the "Add build step" option and select "Invoke Ant".
+>Select the "Ant version" you want to work on(that you defined before from the drop down available).
+>Click on Save. Click on the "Build History" to view the build results. Click on the "Console Output" to view the build logs.
+
+
+
+
+
+
+
+
+
+
+
+
