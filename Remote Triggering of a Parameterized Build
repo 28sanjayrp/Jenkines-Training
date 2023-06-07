@@ -1,0 +1,14 @@
+*****************************Remote Triggering of a Parameterized Build******************************
+
+
+Steps to be followed:
+1.	Configure a parameterized build in Jenkins
+2.	Trigger a parameterized build remotely
+
+
+Step 1:  Configure a parameterized build in Jenkins:
+>Open the browser and go to "Jenkins dashboard" by typing localhost/publicIP:8080 in your browser.
+>Provide the credentials and click on Sign in.
+>Click on "Manage Jenkins". From the list of options, choose "Manage Plugins".
+>Under the Available tab, search for "Build with Parameters" Plugin. 
+>Select the checkbox in front of the plugin and click on the Install without restart button.
