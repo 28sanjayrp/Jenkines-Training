@@ -1,0 +1,39 @@
+https://www.jenkins.io/doc/book/installing/
+https://www.jenkins.io/doc/book/pipeline/
+
+
+Follow the below steps or commands to install the jankins in ubuntu instance:
+#this is comment
+
+sudo su -      #to be a root or super user
+apt update        #update all packages before install
+
+apt install openjdk-11-jre -y         # installing java to run Jenkins
+java -version                         # to check the java version or installed or not
+
+apt upgrade
+#Downloading and installing the Jenkins packages
+
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null                                    #line 17 & 18 both in one command
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \                      
+  /etc/apt/sources.list.d/jenkins.list > /dev/null                                       #line 19, 20, & 21 in one command   
+sudo apt-get update
+sudo apt-get install jenkins                                         #to install the Jankins 
+systemctl status jenkins                                             #to check the Jankins status
+sudo service jenkins status                                         #to check the status of the installation. Once you verify the status as active, you can press Ctrl+z to exit from the process.
+systemctl start jenkins                                      #if jankins nor started, to start it
+systemctl status jenkins                                      # varify the status
+
+#To know which port, the application is listening to in your Linux server
+lsof -i -P -n | grep LISTEN
+
+
+#Open localhost/publicIP:8080 in the browser, and you will need to enter the initial password. 
+
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword       #Copy this password and paste it on your Jenkins page in the browser.
+
+#click on continue and , click on Install the suggested plugins. 
+#You can either create an admin user or skip and continue as admin. Select Skip and continue as admin.
+#2.13	In the Instance configuration page, click on the Start using Jenkins button. Now your jankins is ready to work
