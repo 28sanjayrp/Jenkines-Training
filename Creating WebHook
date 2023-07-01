@@ -1,0 +1,12 @@
+*what is webhook?
+->Webhooks provide a way for notifications to be delivered to an external web server whenever certain events occur on GitHub.
+Webhooks can be triggered whenever specific events occur on GitHub. 
+For example, you can configure a webhook to trigger whenever: Code is pushed to a repository.
+
+how to create git webhook?
+step1: login to git hub
+step2: go to respective repository
+step3: click on settings (right side of insight)
+step4: under code and automation -> click o WebHooks
+step5: click on add webhook
+step6: put the url of your jenkins job( example: http://18.205.189.140:8080/github-webhook/) click save or add
