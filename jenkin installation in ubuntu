@@ -17,7 +17,16 @@ wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
 sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 sudo apt install ca-certificates
 
-apt upgrade
+apt upgradecurl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+sudo apt-get update
+sudo apt upgrade
+
 sudo apt-get install jenkins       #to install the jankins 
 systemctl status jenkins    #to check the jankins status
 sudo service jenkins status   #to check the status of the installation. Once you verify the status as active, you can press Ctrl+z to exit from the process.
